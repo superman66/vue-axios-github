@@ -1,21 +1,39 @@
 <template>
     <div class="container">
         <md-layout md-gutter v-for="repo in list">
-            <md-card style="width: 100%">
-                <md-card-header>
-                    <md-card-header-text>
+            <md-card class="repos-card" md-with-hover>
+                <md-card-header md-with-hover="true">
+                    <md-card-header-text style="text-align: left">
                         <div class="md-title">{{repo.name}}</div>
-                        <div class="md-subhead">Subtitle here</div>
+                        <div class="md-subhead">{{repo.description}}</div>
                     </md-card-header-text>
-
                     <md-card-media>
-                        <img src="./assets/logo.png" alt="People">
+                        <img :src="repo.owner.avatar_url" alt="People">
                     </md-card-media>
                 </md-card-header>
-
+                <md-card-content>
+                    <div class="repo-mark">
+                        <span class="md-subhead" v-if="repo.language">
+                            <md-icon>location_on</md-icon>
+                            <span>{{repo.language}}</span>
+                        </span>
+                        <span class="md-subhead" v-if="repo.stargazers_count">
+                            <md-icon>location_on</md-icon>
+                            <span>{{repo.stargazers_count}}</span>
+                        </span>
+                        <span class="md-subhead" v-if="repo.forks_count">
+                            <md-icon>location_on</md-icon>
+                            <span>{{repo.forks_count}}</span>
+                        </span>
+                        <span class="md-subhead">
+                            <md-icon>location_on</md-icon>
+                            <span>{{repo.updated_at}}</span>
+                        </span>
+                    </div>
+                </md-card-content>
                 <md-card-actions>
-                    <md-button>Action</md-button>
-                    <md-button>Action</md-button>
+                    <md-button>View Detail</md-button>
+
                 </md-card-actions>
             </md-card>
         </md-layout>
@@ -25,6 +43,8 @@
 <script type="application/ecmascript">
     import api from './constant/api'
     import {fetch} from './http'
+    import * as types from './store/types'
+
     export default {
         name: '',
         data () {
@@ -34,12 +54,16 @@
             }
         },
         mounted(){
+            this.$store.commit(types.TITLE, 'Your Repository');
             this.getRepository();
         },
 
         methods: {
             getRepository(){
-                fetch(api.repo_list)
+                let params = {
+                    sort: 'updated'
+                }
+                fetch(api.repo_list, params)
                     .then(response => {
                         this.list = response;
                     })
@@ -50,25 +74,15 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang='scss' rel="stylesheet/scss" type="text/css">
-    .repos-list {
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: flex;
-        list-style: none;
-        -webkit-flex-wrap: wrap;
-        flex-wrap: wrap;
-        -webkit-box-pack: justify;
-        -webkit-justify-content: space-between;
-        justify-content: space-between;
-        width: 900px;
-        .repos-card {
-            display: -webkit-box;
-            display: -webkit-flex;
-            display: flex;
-            width: 359px;
-            border: 1px solid #ddd;
-            border-radius: 2px;
+    .repos-card {
+        width: 600px;
+        margin: 10px auto;
+        .repo-mark {
+            text-align: left;
+            position: absolute;
+            bottom: 15px;
         }
     }
+
 
 </style>
