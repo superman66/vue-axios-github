@@ -6,6 +6,9 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import store from './store/store'
 import * as types from './store/types'
+import Index from './index.vue'
+import Repository from './repository.vue'
+import Login from './login.vue'
 
 Vue.use(VueRouter)
 
@@ -13,11 +16,7 @@ const routes = [
     {
         path: '/',
         name: '/',
-        component(resolve){
-            require.ensure(['./index.vue'], () => {
-                resolve(require('./index.vue'))
-            })
-        }
+        component: Index
     },
     {
         path: '/repository',
@@ -25,20 +24,12 @@ const routes = [
         meta: {
             requireAuth: true,
         },
-        component(resolve){
-            require.ensure(['./repository.vue'], () => {
-                resolve(require('./repository.vue'))
-            })
-        }
+        component: Repository
     },
     {
         path: '/login',
         name: 'login',
-        component(resolve){
-            require.ensure(['./login.vue'], () => {
-                resolve(require('./login.vue'))
-            })
-        }
+        component: Login
     }
 ];
 

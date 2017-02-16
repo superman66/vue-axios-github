@@ -2,7 +2,7 @@
     <div id="app">
         <md-toolbar class="black">
             <div class="container">
-                <div class="text-left">
+                <div class="left">
                     <a href="https://github.com" target="_blank">
                         <svg aria-hidden="true" class="octicon octicon-mark-github" height="32" version="1.1"
                              viewBox="0 0 16 16" width="32">
@@ -12,6 +12,9 @@
                     </a>
                     <span class="md-title title">{{title}}</span>
                 </div>
+              <div class="right">
+                <a v-on:click="logout"  class=" md-default" v-show="token">logout</a>
+              </div>
             </div>
         </md-toolbar>
         <router-view>
@@ -30,13 +33,24 @@
             }
         },
         computed: mapState({
-            title: state => state.title
-        })
+            title: state => state.title,
+            token: state => state.token
+        }),
+      methods: {
+          logout(){
+            this.$store.commit(types.LOGOUT)
+            this.$router.push({
+              path: '/'
+            })
+          }
+      }
     }
 </script>
 
 <style lang="scss">
     @import "../node_modules/vue-material/dist/vue-material.css";
+    @import "assets/css.css";
+    @import "assets/icon.css";
 
     #app {
         font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -50,12 +64,15 @@
         width: 1000px;
         margin: 0 auto;
     }
-
-    .text-left {
+    .left {
+        float: left;
         text-align: left;
     }
+    .right{
+        float: right;
+    }
 
-    .title {
+    .md-toolbar .title {
         vertical-align: text-top;
         margin-left: 5px;
     }
