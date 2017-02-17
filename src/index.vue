@@ -2,7 +2,7 @@
     <div>
         <ul>
             <router-link :to="{path:'/repository'}">
-                repository
+              <md-button href="#/repository"  class="md-raised md-primary">view your repositories</md-button>
             </router-link>
         </ul>
     </div>

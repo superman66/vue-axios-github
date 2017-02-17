@@ -18,15 +18,15 @@
                             <span>{{repo.language}}</span>
                         </span>
                         <span class="md-subhead" v-if="repo.stargazers_count">
-                            <md-icon>location_on</md-icon>
+                            <md-icon>grade</md-icon>
                             <span>{{repo.stargazers_count}}</span>
                         </span>
                         <span class="md-subhead" v-if="repo.forks_count">
-                            <md-icon>location_on</md-icon>
+                            <md-icon>call_split</md-icon>
                             <span>{{repo.forks_count}}</span>
                         </span>
                         <span class="md-subhead">
-                            <md-icon>location_on</md-icon>
+                            <md-icon>update</md-icon>
                             <span>{{repo.updated_at}}</span>
                         </span>
                     </div>
@@ -54,7 +54,7 @@
             }
         },
         mounted(){
-            this.$store.commit(types.TITLE, 'Your Repository');
+            this.$store.commit(types.TITLE, 'Your Repositories');
             this.getRepository();
         },
 
