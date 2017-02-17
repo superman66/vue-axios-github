@@ -1,6 +1,6 @@
 # vue-axios-github
 
-> A Vue.js project
+> 一个项目学会vue全家桶+axios实现登录、拦截、登出功能，以及利用axios的http拦截器拦截请求和响应。
 
 ## Build Setup
 

@@ -3,7 +3,8 @@
   "description": "A Vue.js project",
   "version": "1.0.0",
   "author": "superman",
-  "private": true,
+  "repository": "https://github.com/superman66/vue-axios-github",
+  "private": false,
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
