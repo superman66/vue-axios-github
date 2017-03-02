@@ -83,6 +83,4 @@
             bottom: 15px;
         }
     }
-
-
 </style>
