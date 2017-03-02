@@ -63,9 +63,9 @@
                 let params = {
                     sort: 'updated'
                 }
-                fetch(api.repo_list, params)
+                this.axios.get(api.repo_list, params)
                     .then(response => {
-                        this.list = response;
+                        this.list = response.data;
                     })
             }
         }
