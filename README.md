@@ -7,6 +7,7 @@
 登录及拦截、登出、token失效的拦截及对应 axios 拦截器的使用。
 
 **准备**
+
 你需要先生成自己的 Github Personal Token（[生成Token](https://github.com/settings/tokens/new)）。
 Token 生成后 访问 [Demo](http://www.iamsuperman.cn/vue-axios-github/)，即可查看你的Repository List。
 
@@ -75,6 +76,7 @@ const routes = [
 ];
 ```
 定义完路由后，我们主要是利用`vue-router`提供的钩子函数`beforeEach()`对路由进行判断。
+
 ```javascript
 router.beforeEach((to, from, next) => {
     if (to.meta.requireAuth) {  // 判断该路由是否需要登录权限
@@ -94,6 +96,7 @@ router.beforeEach((to, from, next) => {
 })
 ```
 每个钩子方法接收三个参数：
+
 * to: Route: 即将要进入的目标 路由对象
 * from: Route: 当前导航正要离开的路由
 * next: Function: 一定要调用该方法来 resolve 这个钩子。执行效果依赖 next 方法的调用参数。
@@ -111,6 +114,7 @@ router.beforeEach((to, from, next) => {
 
 #### 第二步：拦截器
 要想统一处理所有http请求和响应，就得用上 axios 的拦截器。通过配置`http response inteceptor`，当后端接口返回`401 Unauthorized（未授权）`，让用户重新登录。
+
 ```javascript
 // http request 拦截器
 axios.interceptors.request.use(
@@ -150,6 +154,7 @@ axios.interceptors.response.use(
 
 ## 关于axios
 对于axios，很多刚开始学习vue的人都觉得文档比较难以看懂。我刚开始也是这么觉得的。但通过这么一个项目下来后，发现axios并不难理解。建议在学习axios的时带着下面的目的去看文档会更高效。因为掌握了下面这些内容，基本上就可以无障碍得在项目中使用axios了。
+
 * 发起http请求的方法
 * http 请求成功时返回的数据及其类型
 * http请求失败的处理
