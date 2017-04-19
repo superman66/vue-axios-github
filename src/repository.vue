@@ -42,7 +42,6 @@
 
 <script type="application/ecmascript">
     import api from './constant/api'
-    import {fetch} from './http'
     import * as types from './store/types'
 
     export default {
