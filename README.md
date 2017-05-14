@@ -1,3 +1,4 @@
+[![Travis](https://img.shields.io/travis/superman66/vue-axios-github.svg)](https://travis-ci.org/superman66/vue-axios-github)
 # 一个项目学会前端实现登录拦截
 
 > 一个项目学会vue全家桶+axios实现登录、拦截、登出功能，以及利用axios的http拦截器拦截请求和响应。
