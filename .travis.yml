@@ -1,0 +1,9 @@
+language: node_js
+node_js:
+- '6'
+cache:
+  bundler: true
+  directories:
+  - node_modules
+script: 
+  - npm run build
