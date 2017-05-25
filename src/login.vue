@@ -2,7 +2,7 @@
   <div class="container">
     <form class="login-form" novalidate @submit.stop.prevent="login">
       <md-input-container md-has-password>
-        <label>Github Personal Token</label>
+        <label>Github Personal Token(Press Enter)</label>
         <md-input type="password" v-model="token"></md-input>
       </md-input-container>
     </form>
