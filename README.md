@@ -175,3 +175,8 @@ npm run dev
 # build for production with minification
 npm run build
 ```
+
+## 如果你对 React 感兴趣
+欢迎 start 我们团队的 React 组件库 [RSuite](https://github.com/rsuite/rsuite).
+
+RSuite 官网：[RSuite|一套 React 的 UI 组件库](https://www.rsuitejs.com)
