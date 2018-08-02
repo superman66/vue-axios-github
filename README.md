@@ -3,6 +3,7 @@
 
 > 一个项目学会vue全家桶+axios实现登录、拦截、登出功能，以及利用axios的http拦截器拦截请求和响应。
 
+点击这里查看👉 [Demo](http://chenhuichao.com/vue-axios-github/)
 ## 前言
 该项目是利用了Github 提供的personal token作为登录token，通过token访问你的Repository List。通过这个项目学习如何实现一个前端项目中所需要的
 登录及拦截、登出、token失效的拦截及对应 axios 拦截器的使用。
