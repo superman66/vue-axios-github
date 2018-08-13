@@ -154,16 +154,6 @@ axios.interceptors.response.use(
 
 通过上面这两步，就可以在前端实现登录拦截了。`登出`功能也就很简单，只需要把当前token清除，再跳转到首页即可。
 
-## 关于axios
-对于axios，很多刚开始学习vue的人都觉得文档比较难以看懂。我刚开始也是这么觉得的。但通过这么一个项目下来后，发现axios并不难理解。建议在学习axios的时带着下面的目的去看文档会更高效。因为掌握了下面这些内容，基本上就可以无障碍得在项目中使用axios了。
-
-* 发起http请求的方法
-* http 请求成功时返回的数据及其类型
-* http请求失败的处理
-* 拦截器的使用
-* http的配置
-
-> [axios文档](https://github.com/mzabriskie/axios)
 
 ## 运行及构建
 ``` bash
@@ -176,8 +166,3 @@ npm run dev
 # build for production with minification
 npm run build
 ```
-
-## 如果你对 React 感兴趣
-欢迎 start 我们团队的 React 组件库 [RSuite](https://github.com/rsuite/rsuite).
-
-RSuite 官网：[RSuite|一套 React 的 UI 组件库](https://www.rsuitejs.com)
