@@ -16,6 +16,7 @@
                 <a v-on:click="logout"  class=" md-default" v-show="token">logout</a>
               </div>
             </div>
+
         </md-toolbar>
         <router-view>
         </router-view>
@@ -23,75 +24,85 @@
 </template>
 
 <script>
-    import * as types from './store/types'
-    import {mapState} from 'vuex'
-    export default {
-        name: 'app',
-        data () {
-            return {
-                msg: 'Welcome to Your Vue.js App',
-            }
-        },
-        computed: mapState({
-            title: state => state.title,
-            token: state => state.token
-        }),
-      methods: {
-          logout(){
-            this.$store.commit(types.LOGOUT)
-            this.$router.push({
-              path: '/'
-            })
-          }
-      }
+import * as types from './store/types'
+import { mapState } from 'vuex'
+export default {
+  name: 'app',
+  data() {
+    return {
+      msg: 'Welcome to Your Vue.js App',
     }
+  },
+  computed: mapState({
+    title: state => state.title,
+    token: state => state.token,
+  }),
+  methods: {
+    logout() {
+      this.$store.commit(types.LOGOUT)
+      this.$router.push({
+        path: '/',
+      })
+    },
+  },
+}
 </script>
 
 <style lang="scss">
-    @import "../node_modules/vue-material/dist/vue-material.css";
-    @import "assets/css.css";
-    @import "assets/icon.css";
+@import '../node_modules/vue-material/dist/vue-material.css';
+@import 'assets/css.css';
+@import 'assets/icon.css';
 
-    #app {
-        font-family: 'Avenir', Helvetica, Arial, sans-serif;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        text-align: center;
-        color: #2c3e50;
-    }
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
 
-    .container {
-        width: 1000px;
-        margin: 0 auto;
-    }
-    .left {
-        float: left;
-        text-align: left;
-    }
-    .right{
-        float: right;
-    }
+.container {
+  width: 1000px;
+  margin: 0 auto;
+}
+.left {
+  float: left;
+  text-align: left;
+}
+.right {
+  float: right;
+}
 
-    .md-toolbar .title {
-        vertical-align: text-top;
-        margin-left: 5px;
-    }
+.md-toolbar .title {
+  vertical-align: text-top;
+  margin-left: 5px;
+}
 
-    h1, h2 {
-        font-weight: normal;
-    }
+h1,
+h2 {
+  font-weight: normal;
+}
 
-    ul {
-        list-style-type: none;
-        padding: 0;
-    }
+ul {
+  list-style-type: none;
+  padding: 0;
+}
 
-    li {
-        display: inline-block;
-        margin: 0 10px;
-    }
+li {
+  display: inline-block;
+  margin: 0 10px;
+}
 
-    a {
-        color: #42b983;
-    }
+a {
+  color: #42b983;
+}
+
+.footer-content {
+  position: fixed;
+  right: 0;
+  top: 80px;
+  p {
+    color: #6d6d6d;
+  }
+}
 </style>
