@@ -40,7 +40,7 @@ if (window.localStorage.getItem('token')) {
 }
 
 const router = new VueRouter({
-    routes
+    router: routes
 });
 
 router.beforeEach((to, from, next) => {
