@@ -3,7 +3,7 @@
 
 > 一个项目学会vue全家桶+axios实现登录、拦截、登出功能，以及利用axios的http拦截器拦截请求和响应。
 
-点击这里查看👉 [Demo](http://chenhuichao.com/vue-axios-github/)
+点击这里查看👉 [Demo](https://github.com/superman66/vue-axios-github)
 
 页面打不开？可能你需要翻墙。[点击查看翻墙推荐](https://github.com/superman66/mac/issues/4)
 ## 前言
