@@ -10,7 +10,7 @@
     "build": "rm -rf dist/ && cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "dependencies": {
-    "axios": "^0.15.3",
+    "axios": "^0.19.0",
     "vue": "^2.1.0",
     "vue-material": "^0.7.1",
     "vue-router": "^2.2.1",
